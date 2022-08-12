@@ -1,0 +1,9 @@
+@font-face {
+    font-family: MinhaFonte;
+    src: url(exoregular.otf), local(Exo Regular);
+
+}
+
+body {
+    font-family: MinhaFonte;
+}
