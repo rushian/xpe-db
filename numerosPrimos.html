@@ -1,0 +1,22 @@
+<html>
+    <body>Olá, abra o console para trabalhar com a função desenvolvida!
+        <script>
+            function verificaNumeroPrimo(numero) {
+                var divisiveis = [];
+                for(i=1;i <= numero; i++){
+                    if(numero % i === 0){
+                        divisiveis.push(i);
+                    }
+                }
+                if(numero === 1){
+                    console.log("O número " + numero + " não é considerado primo");
+                }else if(divisiveis.length === 2){
+                    console.log("O número " + numero +" é primo");
+                }else{
+                    console.log("O número " + numero +" não é primo");
+                }
+                return divisiveis;
+            }
+        </script>
+    </body>
+</html>
