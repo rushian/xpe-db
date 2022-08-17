@@ -1,12 +1,15 @@
 <html>
-    <body>Olá, abra o console para trabalhar com a função desenvolvida!
+    <body><p style="font-family: Arial, Helvetica, sans-serif;">Olá, abra o console para trabalhar com as funções desenvolvidas!
+            <br><span style="font-size: 11px;">por exemplo, verificaNumeroPrimo(20) ou listaPrimos(1,20)</span></p>
         <script>
             function verificaNumeroPrimo(numero) {
                 var divisiveis = [];
-                for(i=1;i <= numero; i++){
+                var primos = [];
+                for(var i=1;i <= numero; i++){
                     if(numero % i === 0){
                         divisiveis.push(i);
                     }
+                    
                 }
                 if(numero === 1){
                     console.log("O número " + numero + " não é considerado primo");
@@ -16,6 +19,33 @@
                     console.log("O número " + numero +" não é primo");
                 }
                 return divisiveis;
+            }
+
+            function listaPrimos(valorInicial,valorFinal) { 
+                if(valorFinal !== undefined){
+                    var divisiveis = [];
+                    var primos = [];
+                    var somaPrimos = 0;
+                    for(var i=1; i < valorFinal; i++) {
+                        for(var j=1;j <= i; j++){
+                            if(i % j === 0){
+                                divisiveis.push(i);
+                            }
+                        }
+                        if(divisiveis.length === 2 && i >= valorInicial){
+                            primos.push(i);
+                            if(i >= valorInicial ){
+                                somaPrimos += i;
+                            }
+                        }
+                        divisiveis = [];
+                    }
+                    console.log("A soma dos numeros primos no intervalo de " + valorInicial + " a " + valorFinal + " é: " + somaPrimos);
+                    return(primos);
+                }else{
+                    console.log("Forneça um intervalo com valor inicial e valor final [por exemplo, listaPrimos(1,"+valorInicial+")]");
+                    return "Solicitação inválida";
+                }
             }
         </script>
     </body>

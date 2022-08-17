@@ -192,6 +192,13 @@ function imc(peso,altura){
     }
     return imc;
 }
+
+function usarImc(){
+    var peso = parseFloat(window.prompt('Digite o peso'));
+    var altura = parseFloat(window.prompt('Digite a altura').replace(",","."));
+    imc(peso, altura);
+    console.log("===============");
+}
 function operadoresLogicos(){
     var hojeFezCalor = false;
     var ontemFezCalor = false;
